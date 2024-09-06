@@ -3,7 +3,7 @@
  *      nams-campus-transition-notification-project-24-25a            *
  *                                                                    *
  * This script is designed to be run from a Google Sheet. It will     *
- * send an email with attachements and links to a list of recipients  *
+ * send an email with attachments and links to a list of recipients   *
  * based on the value in the "Campus" column of the sheet.            *
  *                                                                    *
  * The administrator will first create two letters using              *
@@ -29,7 +29,7 @@ const DATE_SENT_COL = "Date when the email was sent to campuses";
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
   ui.createMenu("Notify Campuses")
-    .addItem("Send emails to campuses with a date in column F", "sendEmails")
+    .addItem("Send emails to campuses with a date in column F and a blank in column BD", "sendEmails")
     .addToUi();
 }
 
