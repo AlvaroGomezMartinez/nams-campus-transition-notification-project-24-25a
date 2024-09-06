@@ -83,6 +83,7 @@ function sendEmails(
         GmailApp.sendEmail(recipients, msgObj.subject, msgObj.text, {
           htmlBody: msgObj.html,
           replyTo: "john.decker@nisd.net",
+          cc: "john.decker@nisd.net"
         });
 
         successCount++;
