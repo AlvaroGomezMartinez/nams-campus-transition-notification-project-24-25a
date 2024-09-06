@@ -28,7 +28,7 @@ const DATE_SENT_COL = "Date when the email was sent to campuses";
 
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
-  ui.createMenu("Notify Campuses")
+  ui.createMenu("📬 Notify Campuses")
     .addItem("Send emails to campuses with a date in column F and a blank in column BD", "sendEmails")
     .addToUi();
 }
