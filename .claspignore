@@ -1,2 +1,3 @@
-# Ignore .git
-.git
+**/**
+!Code.js
+!appsscript.json
