@@ -20,7 +20,7 @@
  *                Office: 1-210-397-9408                              *
  *                Mobile: 1-210-363-1577                              *
  *                                                                    *
- * Last Updated: 09/05/24                                             *
+ * Last Updated: 09/13/24                                             *
  **********************************************************************/
 
 const EMAIL_SENT_COL = "Return Date";
@@ -29,28 +29,36 @@ const DATE_SENT_COL = "Date when the email was sent to campuses";
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
   ui.createMenu("📬 Notify Campuses")
-    .addItem("Send emails to campuses with a date in column F and a blank in column BD", "sendEmails")
+    .addItem(
+      "Send emails to campuses with a date in column F and a blank in column BD",
+      "sendEmails"
+    )
     .addToUi();
 }
 
 function sendEmails(
   sheet = SpreadsheetApp.openById(
-    "11kbezUuY2o7P0cvgKMW5Kjp72SY2cOiZFa7SjjIfpeE",
-  ).getSheetByName("Form Responses 2"),
+    "11kbezUuY2o7P0cvgKMW5Kjp72SY2cOiZFa7SjjIfpeE"
+  ).getSheetByName("Form Responses 2")
 ) {
   const sheetName = sheet.getName();
   const targetSheetname = "Form Responses 2";
 
   if (sheetName !== targetSheetname) {
     SpreadsheetApp.getUi().alert(
-      'This function can only be run from the "' + targetSheetname + '" sheet.',
+      'This function can only be run from the "' + targetSheetname + '" sheet.'
     );
     return;
   }
 
-  const dataRange = sheet.getDataRange();
+  const dataRange = sheet.getRange(
+    2,
+    1,
+    sheet.getLastRow() - 1,
+    sheet.getLastColumn()
+  );
   const data = dataRange.getDisplayValues();
-  const heads = data.shift();
+  const heads = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
 
   const emailSentColIdx = heads.indexOf(DATE_SENT_COL);
 
@@ -59,7 +67,7 @@ function sendEmails(
   }
 
   const obj = data.map((r) =>
-    heads.reduce((o, k, i) => ((o[k] = r[i] || ""), o), {}),
+    heads.reduce((o, k, i) => ((o[k] = r[i] || ""), o), {})
   );
 
   // Initialize counters for success and error counts for dialog display
@@ -68,7 +76,7 @@ function sendEmails(
   let errorMessages = []; // Stores the error messages for dialog display
 
   obj.forEach(function (row, rowIdx) {
-    if (row[EMAIL_SENT_COL] !== "" && row[DATE_SENT_COL] === "") {
+    if (row[EMAIL_SENT_COL].trim() !== "" && row[DATE_SENT_COL] === "") {
       try {
         const campusInfo = getInfoByCampus(row["Campus"]);
         const recipients = campusInfo.recipients;
@@ -77,13 +85,13 @@ function sendEmails(
         const msgObj = fillInTemplateFromObject_(
           emailTemplate.message,
           row,
-          driveLink,
+          driveLink
         );
 
         GmailApp.sendEmail(recipients, msgObj.subject, msgObj.text, {
           htmlBody: msgObj.html,
           replyTo: "john.decker@nisd.net",
-          cc: "john.decker@nisd.net"
+          cc: "john.decker@nisd.net",
         });
 
         successCount++;
@@ -98,8 +106,8 @@ function sendEmails(
 
   SpreadsheetApp.getUi().alert(
     `Emails Sent: ${successCount}\nErrors: ${errorCount}\n${errorMessages.join(
-      "\n",
-    )}`,
+      "\n"
+    )}`
   );
 
   function getInfoByCampus(campusValue) {
@@ -270,7 +278,14 @@ function sendEmails(
         return {
           recipients: [
             "kevin.vanlanham@nisd.net",
-            "ximena.hueramedina@nisd.net",
+            "catelyn.vasques",
+            "barbra.bloomingdale@nisd.net",
+            "susana.duran@nisd.net",
+            "jesus.alonzo@nisd.net",
+            "grissel.gandaria@nisd.net",
+            "amandam.gonzalez@nisd.net",
+            "jeanette.navarro@nisd.net",
+            "paul.ramirez@nisd.net",
           ],
           driveLink: "1jl0pKTbYn16496dOK-AFt1WlpkW9fy64",
         };
