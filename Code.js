@@ -1,27 +1,10 @@
-/**********************************************************************
- *                                                                    *
- *      nams-campus-transition-notification-project-24-25a            *
- *                                                                    *
- * This script is designed to be run from a Google Sheet. It will     *
- * send an email with attachments and links to a list of recipients   *
- * based on the value in the "Campus" column of the sheet.            *
- *                                                                    *
- * The administrator will first create two letters using              *
- * Autocrat. The letters will be saved in a campus specific           *
- * shared Google Drive folder. When the adminstrator is ready to      *
- * send the email, he clicks on the 'Notify Campuses' user menu       *
- * and then the option that is provided by the dropdown. An email     *
- * will be sent to the campus administrators with a link to the       *
- * folder and the two letters.                                        *
- *                                                                    *
- * Project Lead: John Decker, Associate Principal, NAMS               *
- * Script Author: Alvaro Gomez, Academic Technology Coach             *
- *                alvaro.gomez@nisd.net                               *
- *                Office: 1-210-397-9408                              *
- *                Mobile: 1-210-363-1577                              *
- *                                                                    *
- * Last Updated: 09/13/24                                             *
- **********************************************************************/
+/**
+ * @title nams-campus-transition-notification-project-24-25a
+ * @description This script is designed to be run from a Google Sheet. It will send an email with attachments and links to a list of recipients based on the value in the "Campus" column of the sheet. The administrator will first create two letters using Autocrat. The letters will be saved in a campus specific shared Google Drive folder. When the adminstrator is ready to send the email, he clicks on the 'Notify Campuses' user menu and then the option that is provided by the dropdown. An email will be sent to the campus administrators with a link to the folder and the two letters.
+ * @projectLead John Decker, Associate Principal, NAMS
+ * @author Alvaro Gomez, Academic Technology Coach, 1-210-397-9408, 1-210-363-1577, alvaro.gomez@nisd.net
+ * @lastUpdated 09/17/24
+ */
 
 const EMAIL_SENT_COL = "Return Date";
 const DATE_SENT_COL = "Date when the email was sent to campuses";
