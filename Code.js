@@ -134,12 +134,25 @@ function sendEmails(
         };
       case "connally":
         return {
-          recipients: ["erica.robles@nisd.net", "monica.ramirez@nisd.net"],
+          recipients: [
+            "erica.robles@nisd.net",
+            "monica.ramirez@nisd.net",
+            ],
           driveLink: "1dFXFBakVlHRaE2M4SQR9u-hVoFRs73-6",
         };
       case "folks":
         return {
-          recipients: "yvette.lopez@nisd.net",
+          recipients: [
+            "yvette.lopez@nisd.net",
+            "miguel.trevino@nisd.net",
+            "terry.precie@nisd.net",
+            "angie.perez@nisd.net",
+            "norma.esparza@nisd.net",
+            "james.garza@nisd.net",
+            "keli.hall@nisd.net",
+            "ann.devline@nisd.net",
+            "kendra.delavega@nisd.net",
+            ],
           driveLink: "1iA4d7ju4dU7aOcqr4R6PezzHUG5x1LK9",
         };
       case "garcia":
@@ -155,12 +168,18 @@ function sendEmails(
         };
       case "hobby":
         return {
-          recipients: ["gregory.dylla@nisd.net", "jaime.heye@nisd.net"],
+          recipients: [
+            "gregory.dylla@nisd.net",
+            "jaime.heye@nisd.net",
+            ],
           driveLink: "1OmqKg2tjRmGxx_FbdzPm0seMdjaqDr1F",
         };
       case "holmgreen":
         return {
-          recipients: ["cheryl.parra@nisd.net", "frank.johnson@nisd.net"],
+          recipients: [
+            "cheryl.parra@nisd.net",
+            "frank.johnson@nisd.net",
+            ],
           driveLink: "1nGHHinv5vS9O9XuVyKg1SPIzpleVbhoh",
         };
       case "jefferson":
@@ -187,7 +206,9 @@ function sendEmails(
         };
       case "jones magnet":
         return {
-          recipients: "xavier.maldonado@nisd.net",
+          recipients: [
+            "xavier.maldonado@nisd.net",
+            ],
           driveLink: "1L1roRy3NfUXIm7MmC76YeLo3F_9MhqIE",
         };
       case "jordan":
@@ -226,7 +247,7 @@ function sendEmails(
             "laura-i.sanroman@nisd.net",
             "jessica.montalvo@nisd.net",
           ],
-          driveLink: "",
+          driveLink: "1XbmCR6M-3aUWuRoNs050XtOFKUvlz1x5",
         };
       case "pease":
         return {
@@ -278,7 +299,7 @@ function sendEmails(
         return {
           recipients: [
             "kevin.vanlanham@nisd.net",
-            "catelyn.vasques",
+            "catelyn.vasquez@nisd.net",
             "barbra.bloomingdale@nisd.net",
             "susana.duran@nisd.net",
             "jesus.alonzo@nisd.net",
@@ -302,12 +323,17 @@ function sendEmails(
         };
       case "stinson":
         return {
-          recipients: "louis.villarreal@nisd.net",
+          recipients: [
+            "louis.villarreal@nisd.net",
+          ],
           driveLink: "1hvX1GY7pbgur_hNt58T7uZx_hCW5b496",
         };
       case "straus":
         return {
-          recipients: ["araceli.farias@nisd.net", "brandy.bergeron@nisd.net"],
+          recipients: [
+            "araceli.farias@nisd.net",
+            "brandy.bergeron@nisd.net",
+            ],
           driveLink: "136mdaz16r8lonY5En6Rdc983hhji32k4",
         };
       case "vale":
@@ -336,7 +362,9 @@ function sendEmails(
         };
       case "test":
         return {
-          recipients: ["alvaro.gomez@nisd.net"], //, "john.decker@nisd.net"],
+          recipients: [
+            "alvaro.gomez@nisd.net"
+            ], //, "john.decker@nisd.net"],
           driveLink: "1I7mkmBa3-sO_eG6f2KlSKyUg-G71ZAYK",
         };
       default:
