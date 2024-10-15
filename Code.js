@@ -8,6 +8,7 @@
 
 const EMAIL_SENT_COL = "Return Date";
 const DATE_SENT_COL = "Date when the email was sent to campuses";
+const CAMPUS_FOLDER_COL = "Campus folder ID";
 
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
@@ -59,7 +60,7 @@ function sendEmails(
   let errorMessages = []; // Stores the error messages for dialog display
 
   obj.forEach(function (row, rowIdx) {
-    if (row[EMAIL_SENT_COL].trim() !== "" && row[DATE_SENT_COL] === "") {
+    if (row[EMAIL_SENT_COL].trim() !== "" && row[DATE_SENT_COL] === "" && row[CAMPUS_FOLDER_COL] !== "") {
       try {
         const campusInfo = getInfoByCampus(row["Campus"]);
         const recipients = campusInfo.recipients;
@@ -133,7 +134,7 @@ function sendEmails(
             "norma.esparza@nisd.net",
             "james.garza@nisd.net",
             "keli.hall@nisd.net",
-            "ann.devline@nisd.net",
+            "ann.devlin@nisd.net",
             "kendra.delavega@nisd.net",
             ],
           driveLink: "1iA4d7ju4dU7aOcqr4R6PezzHUG5x1LK9",
@@ -239,7 +240,7 @@ function sendEmails(
             "tamara.campbell-babin@nisd.net",
             "tiffany.flores@nisd.net",
             "tanya.alanis@nisd.net",
-            "brian.pfeiffer@nisd.net",
+            "brian.pfeiffer@nisd.net","guadalupe.brister@nisd.net"
           ],
           driveLink: "1MvxU28snFNspmlryjeV27CgNYWsqGn6S",
         };
@@ -307,7 +308,8 @@ function sendEmails(
       case "stinson":
         return {
           recipients: [
-            "louis.villarreal@nisd.net",
+            "louis.villarreal@nisd.net","jeannette.rainey@nisd.net","rick.lane@nisd.net","linda.boyett@nisd.net",
+          "elda.garza@nisd.net","maria.figueroa@nisd.net","miranda.luna@nisd.net","alexis.lopez@nisd.net"
           ],
           driveLink: "1hvX1GY7pbgur_hNt58T7uZx_hCW5b496",
         };
@@ -325,7 +327,7 @@ function sendEmails(
             "jenna.bloom@nisd.net",
             "brenda.rayburg@nisd.net",
             "daniel.novosad@nisd.net",
-            "mary.harrington@nisd.net",
+            "mary.harrington@nisd.net","janet.medina@nisd.net",
           ],
           driveLink: "1bNQsGIx-zqSXYRXHO3DBAu5sgACA0WPC",
         };
