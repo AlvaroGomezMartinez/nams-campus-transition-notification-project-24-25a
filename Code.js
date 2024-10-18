@@ -364,7 +364,7 @@ function sendEmails(
     return {
       message: {
         subject: "AEP Placement Transition Plan",
-        html: `${row["Student Name"]} has nearly completed their assigned placement at NAMS and should be returning to ${row["Campus"]} on or around ${row["Return Date"]}.<br><br>   
+        html: `${row["Name"]} has nearly completed their assigned placement at NAMS and should be returning to ${row["Campus"]} on or around ${row["Return Date"]}.<br><br>   
               On their last day of placement, they will be given withdrawal documents and the parents/guardians will have been called and told to contact ${row["Campus"]} to set up an appointment to re-enroll and meet with an administrator/counselor.<br><br>  
               Below are links and attachments to a Personalized Transition Plan (with notes from NAMS' assigned social worker), the student's AEP Transition Plan (with grades and notes from their teachers at NAMS), and a link to ${row["Campus"]}'s folder with all of the transition plans for this year.<br><br>
               Please let me know if you have any questions or concerns.<br><br>
